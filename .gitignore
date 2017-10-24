@@ -12,3 +12,8 @@ bin/Debug
 /.fake
 /.paket/paket.exe
 /Aardvark.log
+**/Debug/*
+**/Release/*
+*.sdf
+*.opendb
+*.targets
