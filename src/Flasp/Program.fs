@@ -1,12 +1,17 @@
+namespace Flasp
+
 open System
-open Aardvark.Base
-open Aardvark.Base.Incremental
+open System.Runtime.InteropServices
 
+module Native =
+    
+    [<Literal>]
+    let lib = @"FlaspNative"
 
-[<EntryPoint;STAThread>]
-let main argv = 
-    Ag.initialize()
-    Aardvark.Init()
+    [<DllImport(lib)>]
+    extern void testEverything()
 
-    printfn "%A" V2i.OO
-    0
+module Flasp =
+    
+    let test () =
+        Native.testEverything()
